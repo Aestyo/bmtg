@@ -6,8 +6,8 @@ let mainWindow
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1280,
+        height: 720,
         webPreferences: {
             nodeIntegration: true
         }
@@ -15,13 +15,11 @@ function createWindow() {
 
     mainWindow.loadURL(
         url.format({
-            pathname: path.join(__dirname, `/dist/electron-app/index.html`),
+            pathname: path.join(__dirname, `/dist/bmtglauncher/browser/index.html`),
             protocol: "file:",
             slashes: true
         })
     );
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools()
 
     mainWindow.on('closed', function () {
         mainWindow = null
